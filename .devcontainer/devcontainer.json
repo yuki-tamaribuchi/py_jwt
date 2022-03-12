@@ -1,0 +1,8 @@
+{
+	"name": "py_jwt",
+	"dockerComposeFile": [
+		"../docker-compose.yml"
+	],
+	"service": "python",
+	"workspaceFolder": "/src"
+}
