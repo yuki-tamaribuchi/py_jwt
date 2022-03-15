@@ -2,7 +2,7 @@ import hmac
 from hashlib import sha256
 from json import dumps
 
-from base64 import b64encode
+from py_base64.src.base64.base64 import base64encode
 
 class JWT:
 	def __init__(self, payload, alg="HS256", secret_key="secret"):
@@ -24,8 +24,8 @@ class JWT:
 		self.__header = bytes(dumps(header_dict), "utf-8")
 
 	def __gen_signature(self):
-		b64_header = b64encode(self.__header)
-		b64_payload = b64encode(self.__payload)
+		b64_header = base64encode(self.__header)
+		b64_payload = base64encode(self.__payload)
 		message = b64_header + b"." + b64_payload
 		if self.__alg == "HS256":
 			self.__signature = bytes(hmac.new(self.__secret_key, message, sha256).hexdigest(), "utf-8")
@@ -34,7 +34,7 @@ class JWT:
 
 	
 	def __gen_token(self):
-		self.__token = b64encode(self.__header) + b"." + b64encode(self.__payload)+ b"." + b64encode(self.__signature)
+		self.__token = base64encode(self.__header) + b"." + base64encode(self.__payload)+ b"." + base64encode(self.__signature)
 	
 
 	def get_token(self):
