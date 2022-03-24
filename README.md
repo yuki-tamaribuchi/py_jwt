@@ -1,5 +1,7 @@
 # JWTの勉強
 
+jsonのdumpsとloadsに自作のもの([yuki-tamaribuchi/py_json](https://github.com/yuki-tamaribuchi/py_json))を使用
+
 base64のエンコーダ・デコーダとして自作のもの([yuki-tamaribuchi/py_base64](https://github.com/yuki-tamaribuchi/py_base64))を使用
 
 今後、hmacやsha256を自作していきたい
