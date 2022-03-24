@@ -1,3 +1,6 @@
 [submodule "src/py_base64"]
 	path = src/py_base64
 	url = git@github.com:yuki-tamaribuchi/py_base64.git
+[submodule "src/py_json"]
+	path = src/py_json
+	url = git@github.com:yuki-tamaribuchi/py_json.git
