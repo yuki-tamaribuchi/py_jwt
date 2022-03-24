@@ -1,7 +1,7 @@
 import hmac
 from hashlib import sha256
-from json import dumps
 
+from py_json.src.my_json.dumps import dumps
 from py_base64.src.base64.base64 import base64encode
 
 class JWT:
