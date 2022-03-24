@@ -1,7 +1,7 @@
 import hmac
 from hashlib import sha256
-from json import loads
 
+from py_json.src.my_json import loads
 from py_base64.src.base64.base64 import base64encode, base64decode
 
 def jwt_decoder(token, secret_key):
@@ -20,7 +20,7 @@ def jwt_decoder(token, secret_key):
 
 	decoded_token_dict = {}
 
-	decoded_token_dict["header"] = loads(base64decode(header))
-	decoded_token_dict["payload"]= loads(base64decode(payload))
+	decoded_token_dict["header"] = loads(base64decode(header).decode("utf-8"))
+	decoded_token_dict["payload"]= loads(base64decode(payload).decode("utf-8"))
 
 	return decoded_token_dict
